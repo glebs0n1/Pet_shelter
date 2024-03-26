@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import AboutUs from './Aboutus';
 import logo from './images/logo.png';
 import menuIcon from './images/menu-bar.png';
 import bannerImage from './images/pets-banner.jpg';
@@ -13,6 +15,7 @@ import pet3 from './images/dog3.jpeg';
 import pet4 from './images/animals.png';
 import likeIcon from './images/like.png';
 
+
 function App() {
     const redirectToSignup = () => {
         console.log('Redirecting to signup page...');
@@ -23,12 +26,13 @@ function App() {
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
+
     return ( <
         div className = "app" >
         <
-        header className = "app-header" >
-
-        { /* Top Row */ } <
+        Router >
+        <
+        header className = "app-header" > { /* Top Row */ } <
         div className = "top-row" >
         <
         p className = "top-message" > Become a member of the community today
@@ -52,7 +56,12 @@ function App() {
         /div> <
         div className = "menu-section" >
         <
-        a href = "#about" > About Us < /a> <
+        Switch >
+        <
+        Route path = "/about-us"
+        component = { AboutUs }
+        /> { /* Add other routes here */ } <
+        /Switch> <
         a href = "#pets" > Pets < /a> <
         a href = "#contact" > Contact < /a> <
         a href = "#services" > Services < /a> <
@@ -62,30 +71,9 @@ function App() {
         button className = "sign-up-button" > Sign Up < /button> <
         button className = "login-button" > Login < /button> <
         /div> <
-        /div>
-
-        { /* Hamburger Menu and Menu for Mobile */ } <
-        div className = "mobile-menu" >
-        <
-        div className = "burger-menu"
-        onClick = { toggleMenu } >
-        <
-        img src = { menuIcon }
-        alt = "Menu"
-        className = "menu-icon" / >
-        <
         /div> <
-        div className = { `main-menu ${isMenuOpen ? 'active' : ''}` } >
-        <
-        a href = "#about" > About Us < /a> <
-        a href = "#pets" > Pets < /a> <
-        a href = "#contact" > Contact < /a> <
-        a href = "#services" > Services < /a> <
-        /div> <
-        /div>
-
-        <
-        /header>
+        /header> <
+        /Router>
 
 
         <
@@ -113,11 +101,8 @@ function App() {
         div className = "banner-text" >
         <
         h1 > Find Your New Best Friend < /h1> <
-        p > Browse pets from our network of over 14, 500 shelters and rescues < /p>
-
-        <
+        p > Browse pets from our network of over 14, 500 shelters and rescues < /p> <
         /div> <
-        div className = "banner-line" > < /div> <
         /div>
 
         <
@@ -197,15 +182,17 @@ function App() {
         /div> <
         /div>
 
-        { /* Planning to Adopt Section */ } <
+        { /* Planning to Adopt Section */ }
+
+        <
         div className = "planning-section" >
         <
-        h2 > PLANNING TO ADOPT A PET ? < /h2> <
-        div className = "story-touts-container"
-        style = {
-            { gridTemplateColumns: 'repeat(3, 1fr)' } } > { /* First Box */ } <
+        h2 > Planning to Adopt a Pet ? < /h2> <
+        div className = "story-touts-container" > { /* First Box */ } <
         a href = "/adopt-or-get-involved/"
-        target = "" >
+        target = "_blank"
+        rel = "noopener noreferrer"
+        className = "story-tout-link" >
         <
         div className = "story-tout-box" >
         <
@@ -213,8 +200,29 @@ function App() {
         alt = "Pet 4"
         className = "story-tout-image" / >
         <
-        h2 className = "story-tout-title" > CHECKLIST FOR NEW ADOPTERS < /h2> <
-        p className = "story-tout-description" > Make the adoption transition as smooth as possible. < /p> <
+        h2 className = "story-tout-title" > Adoption Checklist < /h2> <
+        p className = "story-tout-description" > Ensure a smooth transition
+        for you and your new pet. < /p> <
+        div className = "story-tout-cta" >
+        <
+        div className = "story-tout-button" > Learn More < /div> <
+        /div> <
+        /div> <
+        /a> { /* Second Box */ } <
+        a href = "/adopt-or-get-involved/"
+        target = "_blank"
+        rel = "noopener noreferrer"
+        className = "story-tout-link" >
+        <
+        div className = "story-tout-box" >
+        <
+        img src = { pet4 }
+        alt = "Pet 4"
+        className = "story-tout-image" / >
+        <
+        h2 className = "story-tout-title" > Preparing Your Home < /h2> <
+        p className = "story-tout-description" > Create a safe and welcoming environment
+        for your new pet. < /p> <
         div className = "story-tout-cta" >
         <
         div className = "story-tout-button" > Learn More < /div> <
@@ -222,7 +230,9 @@ function App() {
         /div> <
         /a> { /* Third Box */ } <
         a href = "/adopt-or-get-involved/"
-        target = "" >
+        target = "_blank"
+        rel = "noopener noreferrer"
+        className = "story-tout-link" >
         <
         div className = "story-tout-box" >
         <
@@ -230,8 +240,9 @@ function App() {
         alt = "Pet 4"
         className = "story-tout-image" / >
         <
-        h2 className = "story-tout-title" > CHECKLIST FOR NEW ADOPTERS < /h2> <
-        p className = "story-tout-description" > Make the adoption transition as smooth as possible. < /p> <
+        h2 className = "story-tout-title" > Post - Adoption Care < /h2> <
+        p className = "story-tout-description" > Ensure long - term happiness and health
+        for your new family member. < /p> <
         div className = "story-tout-cta" >
         <
         div className = "story-tout-button" > Learn More < /div> <

@@ -279,17 +279,33 @@
 /* Adoption Section */
 
 .adoption-section {
-    padding: 20px 0;
+    padding: 40px 0;
+}
+
+.adoption-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #333;
 }
 
 .pet-images {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 30px;
 }
 
 .pet-image-box {
     position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.pet-image-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .like-button {
@@ -302,56 +318,40 @@
 }
 
 .pet-image {
-    width: 100%;
-    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+.pet-details {
+    padding: 15px;
+    text-align: center;
 }
 
 .pet-name {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.pet-breed {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #777;
 }
 
 .special-pet-box {
     grid-column: span 2;
-}
-
-
-/* Pet Types Section */
-
-.pet-types {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    top: -25px;
-    z-index: 1;
-}
-
-.pet-type-box {
-    flex: 1;
-    text-align: center;
-    padding: 20px 20px;
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
     border-radius: 12px;
-    transition: all 0.5s ease;
-    border: 2px solid transparent;
-    margin: 0 10px;
 }
 
-.pet-type-box:hover {
-    border-color: #8b01a7;
-    transform: translateY(-5px);
-}
-
-.pet-type-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.pet-type-box h2 {
-    margin: 0;
-    font-size: 18px;
+.special-pet-details {
+    text-align: center;
+    padding: 20px 0;
 }
 
 
@@ -461,75 +461,73 @@
 }
 
 
-/* Adoption Planning Section */
+/* Planning to Adopt Section */
 
-.adoption-planning {
+.planning-section {
     text-align: center;
-    margin-top: 40px;
-    position: relative;
+    margin-top: 60px;
 }
 
-.adoption-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.adoption-text h2 {
-    margin: 0;
-    font-size: 32px;
+.planning-section h2 {
+    font-size: 36px;
     color: #333;
+    margin-bottom: 50px;
 }
 
 .story-touts-container {
     display: grid;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.story-tout-link {
+    text-decoration: none;
 }
 
 .story-tout-box {
-    background-color: #e208ff;
-    padding: 20px;
+    background-color: #f7f7f7;
+    padding: 30px;
     text-align: center;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .story-tout-box:hover {
-    background-color: #d507e0;
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .story-tout-image {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+.story-tout-title,
+.story-tout-description {
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .story-tout-title {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .story-tout-description {
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 .story-tout-cta {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .story-tout-button {
-    background-color: #fff;
-    color: #e208ff;
-    padding: 10px 20px;
+    background-color: #e208ff;
+    color: #fff;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -538,29 +536,36 @@
     background-color: #d507e0;
 }
 
+
+/* footer Section */
+
 .app-footer {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-column {
     flex: 1;
+    margin-right: 20px;
 }
 
 .footer-column h3 {
-    border-bottom: 2px solid #fff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e208ff;
     padding-bottom: 10px;
+    font-size: 20px;
 }
 
 .footer-column ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
+    padding-left: 0;
 }
 
 .footer-column ul li {
@@ -568,11 +573,23 @@
 }
 
 .footer-column ul li a {
-    color: #fff;
+    color: #e208ff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #d507e0;
 }
 
 .footer-bottom {
-    margin-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #555;
+    padding-top: 20px;
     text-align: center;
+    font-size: 14px;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
