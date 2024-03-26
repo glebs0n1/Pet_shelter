@@ -1,0 +1,48 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+}
+
+.logo img {
+    border-radius: 50%;
+}
+
+.menu h1 {
+    margin: 0;
+}
+
+.right-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.burger-menu {
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.sign-up-button,
+.login-button {
+    background-color: #1669e6;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.sign-up-button:hover,
+.login-button:hover {
+    background-color: #1669e6;
+}
